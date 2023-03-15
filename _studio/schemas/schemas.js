@@ -1,7 +1,9 @@
 import guitar from "./documents/guitar.js"
-import bass from "./documents/bass.js"
+import product from "./documents/product.js"
+import category from "./documents/category.js"
 
 export default [
 	guitar,
-	bass
+	product,
+	category
 ]
