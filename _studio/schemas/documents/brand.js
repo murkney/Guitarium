@@ -1,6 +1,6 @@
 export default {
-	title: 'Category',
-	name: 'category',
+	title: 'Brand',
+	name: 'brand',
 	type: 'document',
 	fields: [
 		{
@@ -9,10 +9,15 @@ export default {
 			type: 'string'
 		},
 		{
-			title: 'Description',
-			name: 'description',
+			title: 'History',
+			name: 'history',
 			type: 'array',
 			of: [{ type: 'block'}]
+		},
+		{
+			title: 'Logo',
+			name: 'logo',
+			type: 'image'
 		}
 	]
 }
