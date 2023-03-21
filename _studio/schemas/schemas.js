@@ -1,7 +1,11 @@
-import product from "./documents/product.js"
+import guitar from "./documents/guitar.js"
 import category from "./documents/category.js"
+import brand from "./documents/brand.js"
+import inStock from "./documents/inStock.js"
 
 export default [
-	product,
-	category
+	guitar,
+	category,
+	brand,
+	inStock
 ]
