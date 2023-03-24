@@ -20,7 +20,7 @@ export default async function guitarList() {
 			const guitarListItem = document.createElement('div');
 			const guitarListItemImage = document.createElement('img');
 			const guitarListItemTitle = document.createElement('h2');
-			const guitarListItemModel = document.createElement('h3');
+			const guitarListItemModel = document.createElement('h4');
 			const guitarListItemPrice = document.createElement('h3');
 			
 			guitarListItem.className = 'guitar-list__item';
@@ -32,7 +32,7 @@ export default async function guitarList() {
 			guitarListItemImage.src = guitar.image;
 			guitarListItemTitle.innerText = guitar.brand;
 			guitarListItemModel.innerText = guitar.model;
-			guitarListItemPrice.innerText = guitar.price;
+			guitarListItemPrice.innerText = `${guitar.price},- kr`;
 			
 			guitarListContainer.appendChild(guitarListItem);
 			
