@@ -1,14 +1,14 @@
 .guitar-list {
 	/* background: green; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: column;
-	margin: 1rem auto;
+	/* display: flex; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	/* flex-flow: column; */
+	/* margin: 1rem auto; */
 }
 
 .guitar-list__item {
-	margin: 0 auto;
+	width: 15vw;
 }
 
 .guitar-list__image {
