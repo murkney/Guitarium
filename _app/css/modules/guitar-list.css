@@ -1,0 +1,28 @@
+.guitar-list {
+	/* background: green; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	margin: 1rem auto;
+}
+
+.guitar-list__item {
+	margin: 0 auto;
+}
+
+.guitar-list__image {
+	width: 100%;
+}
+
+.guitar-list__title {
+	color: black;
+}
+
+.guitar-list__model {
+	color: black;
+}
+
+.guitar-list__price {
+	color: black;
+}
