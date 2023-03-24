@@ -1,8 +1,23 @@
 .header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	color: azure;
+	height: 5rem;
+	border-bottom: 2px solid white;
+	margin-bottom: 2rem;
 }
 
 .header__navigation {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: azure;
+	gap: 2rem;
+	font-size: 25px;
 }
 
-.header__navigation--visible {
+.header a {
+	color: azure;
 }
