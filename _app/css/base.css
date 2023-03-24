@@ -1,9 +1,6 @@
-html
-
-body
-
-header
-
-main
-
-footer
+body {
+	max-width: 1500px;
+	margin: 0 auto;
+	background: #0D2525 ;
+	color: white;
+}
