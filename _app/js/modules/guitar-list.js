@@ -13,8 +13,8 @@ export default async function guitarList() {
 	const guitars = await sanity.fetch(query);
 
 	function createGuitarListContainerDOM() {
-		const guitarListContainer = document.createElement('div');
-		guitarListContainer.className = 'guitar-list';
+		const guitarListContainer = document.querySelector('.main__guitar');
+		//guitarListContainer.className = 'guitar-list';
 
 		for (const guitar of guitars) {
 			const guitarListItem = document.createElement('div');
@@ -48,7 +48,7 @@ export default async function guitarList() {
 
 	function renderHTML() {
 		const guitarListContainer = createGuitarListContainerDOM();
-		document.body.appendChild(guitarListContainer);
+		guitarListContainer.appendChild(guitarListItem);
 	}
 
 	renderHTML();
