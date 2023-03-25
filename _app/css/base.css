@@ -1,6 +1,10 @@
 body {
-	max-width: 1500px;
+	max-width: 100rem;
 	margin: 0 auto;
-	background: #0D2525 ;
-	color: white;
+	background: var(--primary-dark) ;
+	color: var(--primary-light);
+	font-family: var(--primary-font-family);
+	font-weight: 400;
+	font-style: normal;
+	font-size: var(--large-text-size);
 }

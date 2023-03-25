@@ -7,6 +7,12 @@
 	height: 5rem;
 	border-bottom: 0.2rem solid var(--primary-light);
 	margin-bottom: 2rem;
+	white-space: nowrap;
+}
+
+.header a {
+	display: flex;
+	justify-content: center;
 }
 
 .header__navigation {
