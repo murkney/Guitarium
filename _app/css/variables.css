@@ -1,0 +1,29 @@
+:root {
+
+	/* Desktop variables */
+
+	--large-text-size: 2.5rem;
+	--medium-text-size: 1.6rem;
+	--small-text-size: 1.2rem;
+	--extra-small-text-size: 0.8rem;
+
+	/* Mobile variables */
+
+	--mobile-large-text-size: 8rem;
+	--mobile-body-text-size: 5rem;
+	--mobile-small-text-size: 3rem;
+
+	/* Colors */
+	
+	--primary-dark: #0D2525;
+	--secondary-dark: #394747;
+	--tertiary-dark: #4CC9FF;
+	--primary-light: #E5E5E5;
+
+	/*Gap*/
+
+	--gap: 2rem;
+
+	/*Font*/
+	--primary-font-family: 'Roboto', sans-serif;
+}
