@@ -1,28 +1,57 @@
-.guitar-list {
-	/* background: green; */
-	/* display: flex; */
-	/* justify-content: center; */
-	/* align-items: center; */
-	/* flex-flow: column; */
-	/* margin: 1rem auto; */
+.section__main-title {
+	font-size: var(--medium-text-size);
+	margin-bottom: 0.5rem;
+	color: var(--tertiary-light);
 }
 
-.guitar-list__item {
-	width: 30rem;
+.section__main-electric-guitar {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	width: 65vw;
+	grid-gap: 1rem;
 }
 
-.guitar-list__image {
+.section__main-electric-guitar-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	background: var(--secondary-dark);
+	border-radius: var(--primary-border-radius);
+	position: relative;
+	cursor: pointer;
+}
+
+.section__main-electric-guitar-card:hover .section__main-electric-guitar-card-hover {
+	display: block;
+}
+
+.section__main-electric-guitar-card-hover {
+	position: absolute;
+	width: 95%;
+	height: 95%;
+	border: 0.06rem solid var(--tertiary-light);
+	display: none;
+}
+
+.section__main-electric-guitar-card img {
+	min-width: 10rem;
+	max-height: 350px;
+	object-fit: contain;
+}
+
+.section__main-electric-guitar-card span {
 	width: 100%;
+	align-items: flex-start;
+	margin-top: 0.5rem;
 }
 
-/*.guitar-list__title {
-	color: black;
+.section__main-electric-guitar-card span h3 {
+	color: var(--tertiary-dark);
+	margin-bottom: 0.2rem;
 }
 
-.guitar-list__model {
-	color: black;
+.section__main-electric-guitar-card span h5 {
+	color: var(--primary-light);
 }
-
-.guitar-list__price {
-	color: black;
-}*/
