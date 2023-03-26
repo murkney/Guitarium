@@ -1,12 +1,20 @@
-.section__main-title {
+.section__main-title-electric-guitar,
+.section__main-title-bass-guitar,
+.section__main-title-acoustic-guitar {
 	font-size: var(--medium-text-size);
-	margin-bottom: 0.5rem;
+	margin: 2rem 0 1rem 0;
 	color: var(--tertiary-light);
 }
 
-.section__main-electric-guitar {
+.section__main-title-electric-guitar {
+	margin: 0 0 1rem 0;
+}
+
+.section__main-electric-guitar,
+.section__main-bass-guitar,
+.section__main-acoustic-guitar {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	width: 65vw;
 	grid-gap: 1rem;
 }
