@@ -6,5 +6,6 @@
 @import './base.css';
 
 @import './modules/header.css';
+@import './modules/aside.css';
 @import './modules/guitar-list.css';
 @import './modules/footer.css';

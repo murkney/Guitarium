@@ -1,0 +1,7 @@
+.section__aside {
+	display: flex;
+	width: 25vw;
+	height: 100vh;
+	background: var(--secondary-dark);
+	border-radius: var(--primary-border-radius);
+}
