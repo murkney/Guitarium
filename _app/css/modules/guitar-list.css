@@ -7,7 +7,7 @@
 }
 
 .section__main-title-electric-guitar {
-	margin: 0 0 1rem 0;
+	margin: 0 0 1vw 0;
 }
 
 .section__main-electric-guitar,
@@ -25,7 +25,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 1rem;
-	background: var(--secondary-dark);
+	background: radial-gradient(at 50% 60%,#5d6d6d 5%, var(--secondary-dark) 65%);
 	border-radius: var(--primary-border-radius);
 	position: relative;
 	cursor: pointer;

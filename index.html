@@ -3,10 +3,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Index</title>
+		<title>Guitar shop</title>
 		
 		<link rel="stylesheet" href="/_app/css/main.css">
 		<script type="module" src="/_app/js/main.js"></script>
+
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "LocalBusiness",
+			  "address": {
+				 "@type": "0680",
+				 "addressLocality": "Oslo",
+				 "addressRegion": "Oslo",
+				 "streetAddress": "Havreveien 2"
+			  },
+			  "description": "Fantastic guitar shop in heart of Oslo",
+			  "name": "SR guitar shop",
+			  "telephone": "45433490"
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -28,6 +44,70 @@
 		<section class="section">
 			<aside class="section__aside">
 
+				<h3 class="section__aside-title">Filter</h3>
+
+				<form class="section__aside-search">
+					<input type="text" placeholder="search">
+					<button type="submit">
+						<img src="./_app/assets/search_icon.svg" alt="Search icon">
+					</button>
+				</form>
+
+				<button class="section__aside-dropdown-brand">
+					<h3>Brand</h3>
+					<img src="./_app/assets/arrow_down_icon.svg" alt="Arrow icon">
+				</button>
+				
+				<section class="section__aside-dropdown-brand-items">
+					<!--<div class="section__aside-dropdown-brand-items-checkbox">
+						<input type="checkbox" value="ibanez">
+						<h4>Ibanez (3)</h4>
+					</div>
+
+					<div class="section__aside-dropdown-brand-items-checkbox">
+						<input type="checkbox" value="Kiesel">
+						<h4>Kiesel (6)</h4>
+					</div>-->
+				</section>
+
+				<div class="section__aside-underline"></div>
+
+				<button class="section__aside-dropdown-string-count">
+					<h3>String count</h3>
+					<img src="./_app/assets/arrow_down_icon.svg" alt="Arrow icon">
+				</button>
+					
+				<section class="section__aside-dropdown-string-count-items">	
+					<!--<div class="section__aside-dropdown-string-count-items-checkbox">
+						<input type="checkbox" value="6">
+						<h4>6 (8)</h4>
+					</div>
+
+					<div class="section__aside-dropdown-string-count-items-checkbox">
+						<input type="checkbox" value="7">
+						<h4>7 (2)</h4>
+					</div>-->
+				</section>	
+
+				<div class="section__aside-underline"></div>
+
+				<button class="section__aside-dropdown-price">
+					<h3>Price</h3>
+					<img src="./_app/assets/arrow_down_icon.svg" alt="Arrow icon">
+				</button>
+				
+				<section class="section__aside-dropdown-price-items">
+					<!--<div class="section__aside-dropdown-price-items-checkbox">
+						<input type="checkbox" value="1000-1500">
+						<h4>$1000 - $1500 (2)</h4>
+					</div>
+
+					<div class="section__aside-dropdown-price-items-checkbox">
+						<input type="checkbox" value="1500-2000">
+						<h4>$1500 - $2000 (5)</h4>
+					</div>-->
+				</section>
+
 			</aside>
 
 			<main class="section__main">
@@ -39,9 +119,7 @@
 				<section class="section__main-bass-guitar"></section>
 
 				<h3 class="section__main-title-acoustic-guitar">Acoustic guitars</h3>
-				<section class="section__main-acoustic-guitar">
-
-				</section>
+				<section class="section__main-acoustic-guitar"></section>
 
 			</main>
 		</section>
