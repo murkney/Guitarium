@@ -1,7 +1,7 @@
 import { sanity } from "../sanity.js";
 
 export default async function guitarList() {
-	const query = `*[_type == 'guitar'] {
+	const query = `*[_type == 'guitar'] [0...20] {
 		_id,
 		"image": gallery[0].asset->url,
 		"brand": brand->name,
@@ -13,24 +13,22 @@ export default async function guitarList() {
 	// const params = {};
 
 	const guitars = await sanity.fetch(query);
+	const checkboxPrice = document.querySelectorAll('.section__aside-dropdown-price-items-checkbox input');
+	let guitarListContainer = '';
 
 	function createGuitarListContainerDOM() {
-
-		let guitarListContainer = '';
-
+		
 		guitars.filter(guitar => { 
 
-			const filter = guitar.category.name;
+			const filtering = guitar.category.name;
 
-			if (filter === 'Electric guitar') {
+			if (filtering === 'Electric guitar') {
 				guitarListContainer = document.querySelector('.section__main-electric-guitar');
-			}
-			else if (filter === 'Bass guitar') {
+			} else if (filtering === 'Bass guitar') {
 				guitarListContainer = document.querySelector('.section__main-bass-guitar');
-			}
-			else if (filter === 'Acoustic guitar') {
+			} else if (filtering === 'Acoustic guitar') {
 				guitarListContainer = document.querySelector('.section__main-acoustic-guitar');
-			}
+			} 
 
 			const guitarListItem = document.createElement('div');
 			const guitarListItemImage = document.createElement('img');
@@ -56,16 +54,16 @@ export default async function guitarList() {
 				guitarListItemPrice
 			);
 			guitarListItem.appendChild(guitarListItemHover);
+
 		});
+
 		return guitarListContainer;
 	}
-
-
-	
 
 	function createDropdownBrandDOM() {
 
 		guitars.forEach(guitar => {
+		
 			const brand = guitar.brand;
 			const dropDownBrand = document.querySelector('.section__aside-dropdown-brand-items');
 			const dropDownBrandDiv = document.createElement('div');
@@ -109,35 +107,54 @@ export default async function guitarList() {
 		});
 	}	
 
+
+
+
+
+
+	let checkboxPriceChecked = false;
+	let filteringResult = [];
+	function checkboxPriceStatus() {
+		checkboxPriceChecked = !checkboxPriceChecked;
+	}
+
+	function filterGuitarsByPrice() {
+		//checkboxPriceStatus();
+		createDropdownPriceDOM();
+	}
+
 	function createDropdownPriceDOM() {
 
-		guitars.forEach(guitar => {
-			const price = guitar.price;
-			const dropDownPrice = document.querySelector('.section__aside-dropdown-price-items');
-			const dropDownPriceDiv = document.createElement('div');
-			const dropDownPriceInput = document.createElement('input');
-			const dropDownPriceH3 = document.createElement('H4');
-
-			dropDownPriceDiv.className = 'section__aside-dropdown-brand-items-checkbox';
-			dropDownPriceInput.type = 'checkbox';
-			dropDownPriceInput.value = price;
-			
-
-			dropDownPriceDiv.append(
-				dropDownPriceInput,
-				dropDownPriceH3
-			)
-			dropDownPriceH3.innerText = `$ ${price}`;
-			dropDownPrice.appendChild(dropDownPriceDiv);
+		guitars.filter(guitar => {
+		
+			for(const price of checkboxPrice) {
+				
+				price.addEventListener('click', () => {
+					checkboxPriceStatus();
+					const prices = price.value.split(",");
+					let firstPrice = prices[0];
+					let secondPrice = prices[1];
+					
+					if(checkboxPriceChecked === true && guitar.price >= firstPrice && guitar.price <= secondPrice) {
+						filteringResult.push(guitar._id)
+						//console.log(guitar)
+	
+					} else {
+						
+					}
+				});
+			}
 		});
-	}	
+	}
 
+	console.log(filteringResult)
 
 	function renderHTML() {
 		createGuitarListContainerDOM();
 		createDropdownBrandDOM();
 		createDropdownStringCountDOM();
-		createDropdownPriceDOM();
+		filterGuitarsByPrice();
+		//createDropdownPriceDOM();
 		//const guitarListContainer = createGuitarListContainerDOM();
 		//guitarListContainer.appendChild(guitarListItem);
 	}
