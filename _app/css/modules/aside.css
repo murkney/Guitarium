@@ -20,7 +20,7 @@
 .section__aside-search input {
 	width: 22vw;
 	height: 2rem;
-	margin: 1vw 0;
+	margin: 2.8vw 0;
 	border-radius: var(--primary-border-radius);
 	color: var(--secondary-dark);
 	padding-left: 0.5vw;

@@ -10,6 +10,7 @@
 	margin: 0 0 1vw 0;
 }
 
+.section__main-result,
 .section__main-electric-guitar,
 .section__main-bass-guitar,
 .section__main-acoustic-guitar {
@@ -17,6 +18,10 @@
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	width: 65vw;
 	grid-gap: 1rem;
+}
+
+.section__main-result {
+	/*display: none;*/
 }
 
 .section__main-electric-guitar-card {
