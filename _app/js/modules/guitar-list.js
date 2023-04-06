@@ -1,6 +1,26 @@
 import { sanity } from "../sanity.js";
 
 export default async function guitarList() {
+
+	let guitarSearchText = '';
+	let guitarResult = [];
+
+	const searchListInput = document.querySelector('.section__aside-search input');
+
+	searchListInput.addEventListener('input', handleSearchInput);
+
+	async function handleSearchInput(event) {
+		searchGuitarsInput(event.target);
+		await fetchGuitars();
+		createGuitarListContainerSearchDOM();
+	}
+
+
+	function searchGuitarsInput(input) {
+		guitarSearchText = input.value;
+	};
+
+
 	const query = `*[_type == 'guitar'] {
 		_id,
 		"image": gallery[0].asset->url,
@@ -10,12 +30,80 @@ export default async function guitarList() {
 		"category": category->{name},
 		string_count
 	}`;
-	// const params = {};
 
 	const guitars = await sanity.fetch(query);
 
-	function createGuitarListContainerDOM() {
 
+	async function fetchGuitars() {
+		const query = `*[_type == 'guitar' && brand->name match $brandName + '*' || _type == 'guitar' && model match $brandName + '*'] {
+			_id,
+			"image": gallery[0].asset->url,
+			"brand": brand->name,
+			model,
+			price,
+			"category": category->{name},
+			string_count
+		}`;
+		const params = {
+			brandName: guitarSearchText
+		};
+
+		guitarResult = await sanity.fetch(query, params);
+	}	
+
+	
+
+
+
+
+	function createGuitarListContainerSearchDOM() {
+		const guitarListResult = document.querySelector('.section__main-result');
+
+		guitarResult.forEach(guitar => { 
+
+			const guitarListItem = document.createElement('div');
+			const guitarListItemImage = document.createElement('img');
+			const guitarListItemSpan = document.createElement('span');
+			const guitarListItemTitle = document.createElement('h3');
+			const guitarListItemPrice = document.createElement('h4');
+			const guitarListItemHover = document.createElement('div');
+			
+			guitarListItem.className = 'section__main-electric-guitar-card';
+			guitarListItemHover.className = 'section__main-electric-guitar-card-hover'
+
+			guitarListItemImage.src = guitar.image;
+			guitarListItemTitle.innerText = `${guitar.brand} ${guitar.model}`;
+			guitarListItemPrice.innerText = `$ ${guitar.price}`;
+			
+			guitarListResult.appendChild(guitarListItem);
+			guitarListItem.append(
+				guitarListItemImage,
+				guitarListItemSpan
+			);
+			guitarListItemSpan.append(
+				guitarListItemTitle,
+				guitarListItemPrice
+			);
+			guitarListItem.appendChild(guitarListItemHover);
+		});
+		return guitarListResult;
+	}
+
+	
+	
+ 
+ 
+	 
+	
+	 
+	 
+
+
+
+
+
+	//Filtering
+	function createGuitarListContainerDOM() {
 		let guitarListContainer = '';
 
 		guitars.filter(guitar => { 
@@ -62,7 +150,7 @@ export default async function guitarList() {
 
 
 	
-
+	//Dropdown filter
 	function createDropdownBrandDOM() {
 
 		guitars.forEach(guitar => {
@@ -86,6 +174,7 @@ export default async function guitarList() {
 		});
 	}	
 
+	//Dropdown filter
 	function createDropdownStringCountDOM() {
 
 		guitars.forEach(guitar => {
