@@ -2,7 +2,21 @@ import { sanity } from "../sanity.js";
 
 export default async function guitarList() {
 
-	const query = `*[_type == 'guitar'] {
+	let firstPrice = [];
+	let secondPrice = [];
+	let guitarListContainer = '';
+	const checkboxPrices = document.querySelectorAll('.section__aside-dropdown-price-items-checkbox input');
+
+	for(const priceCheckbox of checkboxPrices) {
+		priceCheckbox.addEventListener('click', () => {
+			let prices = priceCheckbox.value.split(",");			
+			firstPrice.push(prices[0]);
+			secondPrice.push(prices[1]);
+			//console.log(firstPrice, secondPrice)
+		});	
+	}	
+	
+	const query = `*[_type == 'guitar' || price >= $priceOne && price <= $priceTwo] {
 		_id,
 		"image": gallery[0].asset->url,
 		"brand": brand->name,
@@ -12,18 +26,20 @@ export default async function guitarList() {
 		string_count
 	}`;
 
-	const guitars = await sanity.fetch(query);
-	const checkboxPrice = document.querySelectorAll('.section__aside-dropdown-price-items-checkbox input');
-	let guitarListContainer = '';
+	const params = {
+		priceOne: firstPrice,
+		priceTwo: secondPrice,
+	};
 
+	console.log(params)
+
+	const guitars = await sanity.fetch(query, params);
+	
 	//Filtering
 	function createGuitarListContainerDOM() {
 		
-		let guitarListContainer = '';
-
 		guitars.filter(guitar => { 
 			const filter = guitar.category.name;
-			//const limitedArray = guitars.slice(0, 6);
 
 			if (filter === 'Electric guitar') {
 				guitarListContainer = document.querySelector('.section__main-guitars-electric-guitar');
@@ -59,9 +75,7 @@ export default async function guitarList() {
 				guitarListItemPrice
 			);
 			guitarListItem.appendChild(guitarListItemHover);
-
-		});
-		
+		});		
 		return guitarListContainer;
 	}
 
