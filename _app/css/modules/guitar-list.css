@@ -1,65 +1,96 @@
-.section__main-title-electric-guitar,
-.section__main-title-bass-guitar,
-.section__main-title-acoustic-guitar {
+.section__main-guitars-title-electric-guitar,
+.section__main-guitars-title-bass-guitar,
+.section__main-guitars-title-acoustic-guitar {
 	font-size: var(--medium-text-size);
 	margin: 2rem 0 1rem 0;
 	color: var(--tertiary-light);
 }
 
-.section__main-title-electric-guitar {
+.section__main-guitars-title-electric-guitar {
 	margin: 0 0 1vw 0;
 }
 
-.section__main-electric-guitar,
-.section__main-bass-guitar,
-.section__main-acoustic-guitar {
+.section__main-result-container,
+.section__main-guitars-electric-guitar,
+.section__main-guitars-bass-guitar,
+.section__main-guitars-acoustic-guitar {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	width: 65vw;
 	grid-gap: 1rem;
 }
 
-.section__main-electric-guitar-card {
+.section__main-guitars--invisible {
+	display: none;
+}
+
+.section__main-result {
+	/*border: 0.1rem solid var(--tertiary-light);*/
+	/*padding: 1rem;*/
+	display: none;
+}
+
+.section__main-result-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.section__main-result-header h2 {
+	color: var(--primary-light);
+}
+
+.section__main-result-header button {
+	background: url(../../assets/close.svg) center / 2rem no-repeat;
+	height: 2rem;
+	width: 2rem;
+}
+
+.section__main-result--visible {
+	display: grid;
+}
+
+.section__main-guitars-electric-guitar-card {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 1rem;
+	padding: 3%;
 	background: radial-gradient(at 50% 60%,#5d6d6d 5%, var(--secondary-dark) 65%);
 	border-radius: var(--primary-border-radius);
 	position: relative;
 	cursor: pointer;
 }
 
-.section__main-electric-guitar-card:hover .section__main-electric-guitar-card-hover {
+.section__main-guitars-electric-guitar-card:hover .section__main-guitars-electric-guitar-card-hover {
 	display: block;
 }
 
-.section__main-electric-guitar-card-hover {
+.section__main-guitars-electric-guitar-card-hover {
 	position: absolute;
-	width: 95%;
-	height: 95%;
+	width: 97%;
+	height: 97%;
 	border: 0.06rem solid var(--tertiary-light);
 	display: none;
 }
 
-.section__main-electric-guitar-card img {
+.section__main-guitars-electric-guitar-card img {
 	min-width: 10rem;
 	max-height: 350px;
 	object-fit: contain;
 }
 
-.section__main-electric-guitar-card span {
+.section__main-guitars-electric-guitar-card span {
 	width: 100%;
 	align-items: flex-start;
 	margin-top: 0.5rem;
 }
 
-.section__main-electric-guitar-card span h3 {
+.section__main-guitars-electric-guitar-card span h3 {
 	color: var(--tertiary-dark);
 	margin-bottom: 0.2rem;
 }
 
-.section__main-electric-guitar-card span h5 {
+.section__main-guitars-electric-guitar-card span h5 {
 	color: var(--primary-light);
 }
