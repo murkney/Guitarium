@@ -76,13 +76,16 @@
 		<section class="section">
 			<aside class="section__aside">
 
-				<h3 class="section__aside-title">Filter</h3>
+				<!--<h3 class="section__aside-title">Filter</h3>-->
 
 				<form class="section__aside-search">
-					<input type="text" placeholder="search">
-					<button type="submit">
-						<img src="./_app/assets/search_icon.svg" alt="Search icon">
-					</button>
+					<input 
+						type="text" 
+						placeholder="search" 
+						class="section__aside-search-input-text">
+					<input 
+						type="submit" 
+						class="section__aside-search-submit-icon">
 				</form>
 
 				<button class="section__aside-dropdown-brand">
@@ -144,14 +147,28 @@
 
 			<main class="section__main">
 
-				<h3 class="section__main-title-electric-guitar">Electric guitars</h3>
-				<section class="section__main-electric-guitar"></section>
+				<section class="section__main-result">
+					<div class="section__main-result-header">
+						<h2></h2>
+						<button></button>
+					</div>
+					<div class="section__main-result-container"></div>
+				</section>
 
-				<h3 class="section__main-title-bass-guitar">Bass guitars</h3>
-				<section class="section__main-bass-guitar"></section>
+				<section class="section__main-guitars">
+					<h3 class="section__main-guitars-title-electric-guitar">Electric guitars</h3>
+					<section class="section__main-guitars-electric-guitar"></section>
+				</section>
 
-				<h3 class="section__main-title-acoustic-guitar">Acoustic guitars</h3>
-				<section class="section__main-acoustic-guitar"></section>
+				<section class="section__main-guitars">
+					<h3 class="section__main-guitars-title-bass-guitar">Bass guitars</h3>
+					<section class="section__main-guitars-bass-guitar"></section>
+				</section>	
+
+				<section class="section__main-guitars">
+					<h3 class="section__main-guitars-title-acoustic-guitar">Acoustic guitars</h3>
+					<section class="section__main-guitars-acoustic-guitar"></section>
+				</section>
 
 			</main>
 		</section>
