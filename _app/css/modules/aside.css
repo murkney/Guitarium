@@ -17,7 +17,7 @@
 	position: relative;
 }
 
-.section__aside-search input {
+.section__aside-search-input-text {
 	width: 22vw;
 	height: 2rem;
 	margin: 2.8vw 0;
@@ -27,13 +27,15 @@
 	font-size: var(--small-text-size);
 }
 
-.section__aside-search button img {
+.section__aside-search-submit-icon {
 	position: absolute;
 	right: 2vw;
 	top: 50%;
 	transform: translateY(-50%);
 	width: 4rem;
 	height: 2rem;
+	background: url(../../assets/search_icon.svg) center / 1.5rem no-repeat;
+	cursor: pointer;
 	padding: 0.3rem;
 }
 
