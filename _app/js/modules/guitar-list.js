@@ -57,7 +57,6 @@ export default async function guitarList() {
 	
 		guitars.filter(guitar => { 
 			const filter = guitar.category.name;
-			//const limitedArray = guitars.slice(0, 6);
 
 			if (filter === 'Electric guitar') {
 				guitarListContainer = document.querySelector('.section__main-guitars-electric-guitar');
