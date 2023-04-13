@@ -48,7 +48,7 @@ export default async function Search() {
 	 
 	function inputRenderHTML() {
 		foundGuitarListResult.classList.add('section__main-result--visible');
-		for(const type of guitarTypes) {
+		for (const type of guitarTypes) {
 			type.classList.add('section__main-guitars--invisible');
 		};
 		searchInput.value = '';
@@ -56,7 +56,7 @@ export default async function Search() {
 
 	function createFoundGuitarListContainerDOM() {
 	
-		if(foundGuitar.length > 0) {
+		if (foundGuitar.length > 0) {
 			foundGuitarListResultTitle.innerText = `Search results for: ${guitarSearchText}`; 
 
 			foundGuitar.filter(guitar => { 
@@ -95,7 +95,7 @@ export default async function Search() {
 
 	function closeButtonRenderHTML() {
 		foundGuitarListResult.classList.remove('section__main-result--visible');
-		for(const type of guitarTypes) {
+		for (const type of guitarTypes) {
 			type.classList.remove('section__main-guitars--invisible');
 		};
 	}

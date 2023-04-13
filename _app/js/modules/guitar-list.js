@@ -2,7 +2,6 @@ import { sanity } from "../sanity.js";
 
 export default async function guitarList() {
 
-	//let guitars;
 	let priceMinCheckbox = [];
 	let priceMaxCheckbox = [];
 	let brandCheckboxValue = [];
@@ -60,11 +59,9 @@ export default async function guitarList() {
 
 			if (filter === 'Electric guitar') {
 				guitarListContainer = document.querySelector('.section__main-guitars-electric-guitar');
-			}
-			else if (filter === 'Bass guitar') {
+			} else if (filter === 'Bass guitar') {
 				guitarListContainer = document.querySelector('.section__main-guitars-bass-guitar');
-			}
-			else if (filter === 'Acoustic guitar') {
+			} else if (filter === 'Acoustic guitar') {
 				guitarListContainer = document.querySelector('.section__main-guitars-acoustic-guitar');
 			}
 
@@ -92,7 +89,8 @@ export default async function guitarList() {
 				guitarListItemPrice
 			);
 			guitarListItem.appendChild(guitarListItemHover);
-		});		
+		});	
+			
 		return guitarListContainer;
 	}
 
