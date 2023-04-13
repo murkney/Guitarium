@@ -41,56 +41,10 @@ export default async function Search() {
 
 		const params = {
 				brandName: guitarSearchText,
-				modelName: guitarSearchText,
+				modelName: guitarSearchText
 		};
 		foundGuitar = await sanity.fetch(query, params);
 	}
-	
-	
-
-
-
-
-	//function createGuitarListContainerSearchDOM() {
-	//	const guitarListResult = document.querySelector('.section__main-result');
-
-	//	guitarResult.forEach(guitar => { 
-
-	//		const guitarListItem = document.createElement('div');
-	//		const guitarListItemImage = document.createElement('img');
-	//		const guitarListItemSpan = document.createElement('span');
-	//		const guitarListItemTitle = document.createElement('h3');
-	//		const guitarListItemPrice = document.createElement('h4');
-	//		const guitarListItemHover = document.createElement('div');
-			
-	//		guitarListItem.className = 'section__main-guitars-electric-guitar-card';
-	//		guitarListItemHover.className = 'section__main-guitars-electric-guitar-card-hover'
-
-	//		guitarListItemImage.src = guitar.image;
-	//		guitarListItemTitle.innerText = `${guitar.brand} ${guitar.model}`;
-	//		guitarListItemPrice.innerText = `$ ${guitar.price}`;
-			
-	//		guitarListResult.appendChild(guitarListItem);
-	//		guitarListItem.append(
-	//			guitarListItemImage,
-	//			guitarListItemSpan
-	//		);
-	//		guitarListItemSpan.append(
-	//			guitarListItemTitle,
-	//			guitarListItemPrice
-	//		);
-	//		guitarListItem.appendChild(guitarListItemHover);
-	//	});
-	//	return guitarListResult;
-	//}
-
-	
-	
- 
- 
-	 
-	
-	 
 	 
 	function inputRenderHTML() {
 		foundGuitarListResult.classList.add('section__main-result--visible');
@@ -100,13 +54,12 @@ export default async function Search() {
 		searchInput.value = '';
 	}
 
-	//Filtering
 	function createFoundGuitarListContainerDOM() {
 	
 		if(foundGuitar.length > 0) {
 			foundGuitarListResultTitle.innerText = `Search results for: ${guitarSearchText}`; 
-			foundGuitar.filter(guitar => { 
 
+			foundGuitar.filter(guitar => { 
 				const guitarListItem = document.createElement('div');
 				const guitarListItemImage = document.createElement('img');
 				const guitarListItemSpan = document.createElement('span');
@@ -121,7 +74,6 @@ export default async function Search() {
 				guitarListItemTitle.innerText = `${guitar.brand} ${guitar.model}`;
 				guitarListItemPrice.innerText = `$ ${guitar.price}`;
 				
-				
 				guitarListItem.append(
 					guitarListItemImage,
 					guitarListItemSpan
@@ -133,10 +85,12 @@ export default async function Search() {
 				guitarListItem.appendChild(guitarListItemHover);
 				foundGuitarListContainer.appendChild(guitarListItem);
 			});
+
 		} else {
 			foundGuitarListResultTitle.innerText = `Sorry, but nothing matched your search terms. Please try again with some different keywords.`; 
 		}
-		//return foundGuitarListContainer;
+		
+		return foundGuitarListContainer;
 	}
 
 	function closeButtonRenderHTML() {
@@ -145,19 +99,6 @@ export default async function Search() {
 			type.classList.remove('section__main-guitars--invisible');
 		};
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 	//Dropdown filter
 	//function createDropdownBrandDOM() {
@@ -230,17 +171,13 @@ export default async function Search() {
 	//	});
 	//}	
 
-
 	function renderHTML() {
-		
+		foundGuitarListContainer.innerHTML = '';
+		createFoundGuitarListContainerDOM();
 		//createDropdownBrandDOM();
 		//createDropdownStringCountDOM();
 		//createDropdownPriceDOM();
-		
-		foundGuitarListContainer.innerHTML = '';
-		createFoundGuitarListContainerDOM();
 		//foundGuitarListContainer.appendChild(guitarListItem);
-		
 		//foundGuitarListContainer.appendChild(guitarListItem);
 	}
 
