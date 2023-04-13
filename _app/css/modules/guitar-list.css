@@ -15,7 +15,7 @@
 .section__main-guitars-bass-guitar,
 .section__main-guitars-acoustic-guitar {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	width: 65vw;
 	grid-gap: 1rem;
 }
@@ -25,8 +25,6 @@
 }
 
 .section__main-result {
-	/*border: 0.1rem solid var(--tertiary-light);*/
-	/*padding: 1rem;*/
 	display: none;
 }
 
@@ -76,7 +74,7 @@
 
 .section__main-guitars-electric-guitar-card img {
 	min-width: 10rem;
-	max-height: 350px;
+	max-height: 280px;
 	object-fit: contain;
 }
 
@@ -94,3 +92,84 @@
 .section__main-guitars-electric-guitar-card span h5 {
 	color: var(--primary-light);
 }
+
+@media screen and (max-width: 900px) {
+	
+	.section__main-guitars-title-electric-guitar,
+	.section__main-guitars-title-bass-guitar,
+	.section__main-guitars-title-acoustic-guitar {
+		font-size: var(--small-text-size);
+	}
+
+	.section__main-guitars-title-electric-guitar {
+		margin: 0 0 1vw 0;
+	}
+
+	.section__main-result-container,
+	.section__main-guitars-electric-guitar,
+	.section__main-guitars-bass-guitar,
+	.section__main-guitars-acoustic-guitar {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		width: 95vw;
+		grid-gap: 0.5rem;
+	}
+
+	.section__main-result-container h3,
+	.section__main-guitars-electric-guitar h3,
+	.section__main-guitars-bass-guitar h3,
+	.section__main-guitars-acoustic-guitar h3 {
+		font-size: var(--extra-small-text-size);
+	}
+
+	.section__main-result-container h4,
+	.section__main-guitars-electric-guitar h4,
+	.section__main-guitars-bass-guitar h4,
+	.section__main-guitars-acoustic-guitar h4 {
+		font-size: var(--extra-small-text-size);
+	}
+
+	.section__main-result {
+		font-size: var(--extra-small-text-size);
+	}
+
+	.section__main-result-header {
+		margin-bottom: 0.5rem;
+	}
+
+	.section__main-result-header button {
+		background: url(../../assets/close.svg) center / 2rem no-repeat;
+		height: 1rem;
+		width: 1rem;
+	}
+
+	.section__main-guitars-electric-guitar-card img {
+		min-width: 10rem;
+		max-height: 180px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.section__main-guitars-title-electric-guitar {
+		margin: 0 0 2vw 0;
+	}
+
+	.section__main-result-container,
+	.section__main-guitars-electric-guitar,
+	.section__main-guitars-bass-guitar,
+	.section__main-guitars-acoustic-guitar {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
+
+	.section__main-result-header button {
+		background: url(../../assets/close.svg) center / 2rem no-repeat;
+		height: 1rem;
+		min-width: 1rem;
+	}
+
+	.section__main-guitars-electric-guitar-card img {
+		min-width: 10rem;
+		max-height: 150px;
+	}
+}	
