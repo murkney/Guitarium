@@ -2,21 +2,37 @@ import { sanity } from "../sanity.js";
 
 export default async function guitarList() {
 
-	let firstPrice = [];
-	let secondPrice = [];
-	let guitarListContainer = '';
+	//let guitars;
+	let priceMinCheckbox = [];
+	let priceMaxCheckbox = [];
+	let brandCheckboxValue = [];
+	
 	const checkboxPrices = document.querySelectorAll('.section__aside-dropdown-price-items-checkbox input');
+	const brandCheckboxes = document.querySelectorAll('.section__aside-dropdown-brand-items-checkbox input');
 
-	for(const priceCheckbox of checkboxPrices) {
+	//brands
+	for (const brandCheckbox of brandCheckboxes) {
+		brandCheckbox.addEventListener('click', async () => {
+			if (brandCheckbox.checked) {
+				brandCheckboxValue.push(brandCheckbox.value);
+				//brandCheckboxValue = brandCheckboxValue.replace('*', brandCheckbox.value);
+			} else {
+				brandCheckboxValue = brandCheckboxValue.filter(element => element !== brandCheckbox.value);
+			}	
+			console.log(brandCheckboxValue)
+		});
+	}
+
+	//checkboxes
+	for (const priceCheckbox of checkboxPrices) {
 		priceCheckbox.addEventListener('click', () => {
 			let prices = priceCheckbox.value.split(",");			
-			firstPrice.push(prices[0]);
-			secondPrice.push(prices[1]);
-			//console.log(firstPrice, secondPrice)
+			priceMinCheckbox.push(prices[0]);
+			priceMaxCheckbox.push(prices[1]);
 		});	
 	}	
-	
-	const query = `*[_type == 'guitar' || price >= $priceOne && price <= $priceTwo] {
+
+	const query = `*[_type == 'guitar' && price >= $priceMin && price <= $priceMax && brand->name match $brands] {
 		_id,
 		"image": gallery[0].asset->url,
 		"brand": brand->name,
@@ -26,18 +42,19 @@ export default async function guitarList() {
 		string_count
 	}`;
 
-	const params = {
-		priceOne: firstPrice,
-		priceTwo: secondPrice,
+	const params = {	
+		priceMin: 1000,
+		priceMax: 10000,
+		brands: brandCheckboxValue,
+		//strings: 5
 	};
-
-	console.log(params)
-
+	
 	const guitars = await sanity.fetch(query, params);
 	
 	//Filtering
-	function createGuitarListContainerDOM() {
-		
+	function createGuitarListContainerDOM() {	
+		let guitarListContainer = '';
+	
 		guitars.filter(guitar => { 
 			const filter = guitar.category.name;
 
@@ -82,6 +99,6 @@ export default async function guitarList() {
 	function renderHTML() {
 		createGuitarListContainerDOM();
 	}
-
+	
 	renderHTML();
 }
