@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Guitar shop</title>
+		
+		<link rel="stylesheet" href="/_app/css/main.css">
+		<script type="module" src="/_app/js/main.js"></script>
+		<meta name="description" content="Enjoy the lowest prices and best selection of Professional Electric Guitars">
+		<script 
+			async 
+			src="https://www.googletagmanager.com/gtag/js?id=G-YOURGACODE">
+		</script>
+		<script async>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag(
+				'config', 
+				'G-YOURGACODE', 
+				{'anonymize_ip': true }
+			);
+		</script>
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "SportingGoodsStore",
+			  "name": "Guitarium",
+			  "currenciesAccepted": "NOK",
+			  "address": {
+				 "@type": "PostalAddress",
+				 "addressLocality": "Oslo",
+				 "addressRegion": "Oslo",
+				 "postalCode": "0680",
+				 "streetAddress": "Havreveien"
+			  },
+			  "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+			  "openingHoursSpecification":
+			  [
+				 {
+					"@type": "OpeningHoursSpecification",
+					"validFrom": "2023-12-23",
+					"validThrough": "2023-12-31",
+					"opens": "09:00:00",
+					"closes": "11:00:00"
+				 },
+				 {
+					"@type": "OpeningHoursSpecification",
+					"validFrom": "2014-01-01",
+					"validThrough": "2014-01-01",
+					"opens": "12:00:00",
+					"closes": "14:00:00"
+				 }
+			  ]
+			}
+			</script>
+	</head>
+	
+	<body>
+
+		<header class="header">
+			<a href="/index.html">
+				<img src="/_app/assets/logo_guitarium.svg" alt="logo">
+			</a>
+
+			<nav class="header__navigation">
+				<button class="header__navigation-scroll" data-type="electric">Electric guitars</button>
+				<button class="header__navigation-scroll" data-type="bass">Basses</button>
+				<button class="header__navigation-scroll" data-type="acoustic">Acoustics</button>
+				<a href="/in-stock/index.html">In stock</a>
+				<a href="#"><img src="/_app/assets/basket_icon.svg" alt="basket"></a>
+			</nav>
+		</header>
+
+		<main>
+			<h2 class="in-stock__title">Guitars In-Stock</h2>
+			<div class="instock-container" id="instock"></div>
+		</main>
+
+		<footer class="footer">
+			<section class="footer__icons">
+				<a href="https://www.facebook.com">
+					<img src="/_app/assets/facebook_icon.svg" alt="facebook icon">
+				</a>
+				<a href="https://www.instagram.com">
+					<img src="/_app/assets/instagram_icon.svg" alt="instagram icon">
+				</a>
+				<a href="https://www.instagram.com">
+					<img src="/_app/assets/twitter_icon.svg" alt="twitter icon">
+				</a>
+				<a href="https://www.instagram.com">
+					<img src="/_app/assets/youtube_icon.svg" alt="youtube icon">
+				</a>
+			</section>
+		</footer>
+	</body>
+</html>
