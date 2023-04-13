@@ -15,3 +15,21 @@
 	align-items: center;
 	gap: 1.5rem;
 }
+
+@media screen and (max-width: 900px) {
+
+	.footer {
+		justify-content: center;
+		height: 2.5rem;
+		border-top: 0.1rem solid var(--primary-light);
+		margin-top: 1rem;
+	}
+	
+	.footer__icons {
+		gap: 1rem;
+	}
+
+	.footer__icons a {
+		width: 1.2rem;
+	}
+}
