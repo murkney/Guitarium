@@ -1,4 +1,4 @@
-export default function aside() {
+export default function Aside() {
 
 	let brandVisibile = false;
 	let stringCountVisibile = false;

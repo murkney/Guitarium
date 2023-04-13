@@ -41,8 +41,12 @@
 		border-bottom: 0.1rem solid var(--primary-light);
 	}
 
+	.header a {
+		height: 2rem;
+	}
+
 	.header a img {
-		height: 2.8rem;
+		height: 2rem;
 	}
 
 	.header__navigation {

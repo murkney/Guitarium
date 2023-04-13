@@ -1,6 +1,6 @@
 import { sanity } from "../sanity.js";
 
-export default async function inStock() {
+export default async function InStock() {
 	const query = `
 		*[_type == 'in_stock'] {
 			title,
