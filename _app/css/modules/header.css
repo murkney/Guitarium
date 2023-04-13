@@ -27,3 +27,38 @@
 .header a {
 	color: var(--primary-light);
 }
+
+@media screen and (max-width: 900px) {
+
+	.header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		color: var(--primary-light);
+		height: 4rem;
+		margin-bottom: 0;
+		border-bottom: 0.1rem solid var(--primary-light);
+	}
+
+	.header a img {
+		height: 2.8rem;
+	}
+
+	.header__navigation {
+		display: none;
+	}	
+
+	.header__hamburger-menu {
+		background: url(../../assets/hamburger_icon.svg) center / 2rem no-repeat;
+		height: 2rem;
+		width: 2rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.header a img {
+		height: 2rem;
+	}
+}
