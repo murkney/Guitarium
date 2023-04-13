@@ -1,0 +1,11 @@
+.in-stock__title {
+	font-size: var(--medium-text-size);
+	margin: 2rem 0 1rem 0;
+	color: var(--tertiary-light);
+}
+
+.instock-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1rem;
+}
