@@ -43,6 +43,7 @@ export default async function Search() {
 				brandName: guitarSearchText,
 				modelName: guitarSearchText
 		};
+    
 		foundGuitar = await sanity.fetch(query, params);
 	}
 	 
