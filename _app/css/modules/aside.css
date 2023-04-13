@@ -32,7 +32,7 @@
 	right: 2vw;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 4rem;
+	width: 4vw;
 	height: 2rem;
 	background: url(../../assets/search_icon.svg) center / 1.5rem no-repeat;
 	cursor: pointer;
@@ -124,4 +124,118 @@
 	margin: 0.5vw 0;
 	background: var(--tertiary-light);
 	z-index: 100;
+}
+
+@media screen and (max-width: 900px) {
+	
+	.section__aside {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 95vw;
+		height: 100%;
+	}
+	
+	.section__aside-search {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+	}
+	
+	.section__aside-search-input-text {
+		width: 50vw;
+		height: 1.5rem;
+		margin: 1rem 0;
+		padding-left: 1.5vw;
+		font-size: var(--extra-small-text-size);
+	}
+	
+	.section__aside-search-submit-icon {
+		right: 0;
+		transform: translateY(-50%);
+		width: 3rem;
+		height: 1.5rem;
+		background: url(../../assets/search_icon.svg) center / 1rem no-repeat;
+		padding: 0.3rem;
+	}
+	
+	.section__aside-dropdown-brand {
+		margin-top: 1vw;
+	}
+
+	.section__aside-dropdown-brand-items,
+	.section__aside-dropdown-string-count-items,
+	.section__aside-dropdown-price-items {
+		width: 50vw;
+	}
+	
+	.section__aside-dropdown-brand,
+	.section__aside-dropdown-string-count,
+	.section__aside-dropdown-price {
+		width: 50vw;
+		height: 1.5rem;
+		margin-bottom: 0.5vw;
+		font-size: var(--extra-small-text-size);
+	}
+
+	.section__aside-dropdown-brand h3,
+	.section__aside-dropdown-string-count h3,
+	.section__aside-dropdown-price h3 { 
+		font-size: var(--extra-small-text-size);
+	}
+	
+	.section__aside-dropdown-brand img,
+	.section__aside-dropdown-string-count img,
+	.section__aside-dropdown-price img {
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+	
+	.section__aside-dropdown-brand-items-checkbox,
+	.section__aside-dropdown-string-count-items-checkbox,
+	.section__aside-dropdown-price-items-checkbox {
+		display: flex;
+		margin: 0 1vw 0.5vw 0;
+		font-size: var(--extra-small-text-size);
+	}
+	
+	.section__aside-dropdown-brand-items-checkbox input,
+	.section__aside-dropdown-string-items-count-checkbox input,
+	.section__aside-dropdown-price-items-checkbox input {
+		margin-right: 2vw;
+		height: 0.9rem;
+		width: 0.8rem;
+	}
+	
+	.section__aside-underline {
+		width: 50vw;
+		margin: 1vw 0;
+	}
+
+	@media screen and (max-width: 600px) {
+
+		.section__aside-search-input-text {
+			width: 95vw;
+		}
+
+		.section__aside-dropdown-brand,
+		.section__aside-dropdown-string-count,
+		.section__aside-dropdown-price {
+			width: 95vw;
+			height: 1.5rem;
+			margin-bottom: 0.5vw;
+		}
+
+		.section__aside-dropdown-brand-items,
+		.section__aside-dropdown-string-count-items,
+		.section__aside-dropdown-price-items {
+			width: 90vw;
+		}
+
+		.section__aside-underline {
+			width: 95vw;
+			margin: 1.5vw 0;
+		}
+	}	
 }
