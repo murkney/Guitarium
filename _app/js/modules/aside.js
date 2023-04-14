@@ -3,6 +3,7 @@ export default function Aside() {
 	let brandVisibile = false;
 	let stringCountVisibile = false;
 	let priceVisibile = false;
+
 	const buttonDropDownBrand = document.querySelector('.section__aside-dropdown-brand');
 	const buttonDropDownStringCount = document.querySelector('.section__aside-dropdown-string-count');
 	const buttonDropDownPrice = document.querySelector('.section__aside-dropdown-price');
@@ -20,9 +21,11 @@ export default function Aside() {
 	function brandVisibility() {
 		brandVisibile = !brandVisibile;
 	}
+
 	function stringCountVisibility() {
 		stringCountVisibile = !stringCountVisibile;
 	}
+
 	function priceVisibility() {
 		priceVisibile = !priceVisibile;
 	}
@@ -43,36 +46,32 @@ export default function Aside() {
 	}
 
 	function renderHTMLBrand() {
-		if(brandVisibile === true) {
+		if (brandVisibile === true) {
 			sectionBrands.classList.add('section__aside-dropdown-brand-items--visible');
 			arrowBrand.classList.add('section__aside-dropdown-brand--opened');
-		}
-		else {
+		} else {
 			sectionBrands.classList.remove('section__aside-dropdown-brand-items--visible');
 			arrowBrand.classList.remove('section__aside-dropdown-brand--opened');
 		}
 	}
 
 	function renderHTMLCountString() {
-		if(stringCountVisibile === true) {
+		if (stringCountVisibile === true) {
 			sectionStringCounts.classList.add('section__aside-dropdown-string-count-items--visible');
 			arrowStringCount.classList.add('section__aside-dropdown-string-count--opened');
-		}
-		else {
+		} else {
 			sectionStringCounts.classList.remove('section__aside-dropdown-string-count-items--visible');
 			arrowStringCount.classList.remove('section__aside-dropdown-string-count--opened');
 		}
 	}
 
 	function renderHTMLPrice() {
-		if(priceVisibile === true) {
+		if (priceVisibile === true) {
 			sectionPrice.classList.add('section__aside-dropdown-price-items--visible');
 			arrowPrice.classList.add('section__aside-dropdown-price--opened');
-		}
-		else {
+		} else {
 			sectionPrice.classList.remove('section__aside-dropdown-price-items--visible');
 			arrowPrice.classList.remove('section__aside-dropdown-price--opened');
 		}
 	}
-
 }
